@@ -20,6 +20,7 @@ public class ResultadoFgts extends AppCompatActivity {
         setContentView(R.layout.activity_resultado_fgts);
 
         initVariables();
+        getVariables();
         validarDatas();
 
         this.pParcela.setText(this.dataPPagamento.getDayOfMonth() + "/" + this.dataPPagamento.getMonthValue() + "/" + this.dataPPagamento.getYear());
@@ -32,6 +33,12 @@ public class ResultadoFgts extends AppCompatActivity {
         this.pParcela = findViewById(R.id.tvPParcela);
         this.sParcela = findViewById(R.id.tvSParcela);
         this.tParcela = findViewById(R.id.tvTParcela);
+    }
+    
+    protected void getVariables(){
+        protected void getVariables(){
+        Bundle b = getIntent().getExtras();
+        this.dataNascimento = LocalDate.parse(b.getString("dataNascimento"));
     }
 
     protected void validarDatas(){
